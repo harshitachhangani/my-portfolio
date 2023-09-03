@@ -81,14 +81,14 @@ const Home = () => {
     <section className={`bg-gray-100 ${isDarkMode ? 'dark' : ''}`}>
 
       {/* Navbar */}
-      <nav className={`p-4 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-dark'} drop-shadow-xl ${isDarkMode ? 'sticky top-0' : ''}`}>
+      <nav className={`p-5 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-dark'} drop-shadow-xl sticky top-0`}>
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="font-semibold text-xl">Harshita Chhangani</div>
           <ul className="flex space-x-4">
-            <li><a href="#" className="font-semibold text-xl hover:text-blue-300">Home</a></li>
-            <li><a href="#" className="font-semibold text-xl hover:text-blue-300">Projects</a></li>
-            <li><a href="#" className="font-semibold text-xl hover:text-blue-300">Skills</a></li>
-            <li><a href="#" className="font-semibold text-xl hover:text-blue-300">Contact</a></li>
+            <li><a href="#home" className="font-semibold text-xl hover:text-blue-300">Home</a></li>
+            <li><a href="#projects" className="font-semibold text-xl hover:text-blue-300">Projects</a></li>
+            <li><a href="#skills" className="font-semibold text-xl hover:text-blue-300">Skills</a></li>
+            <li><a href="#contact" className="font-semibold text-xl hover:text-blue-300">Contact</a></li>
           </ul>
           <button
             className="text-xl"
@@ -100,14 +100,14 @@ const Home = () => {
       </nav>
 
       {/* Intro */}
-      <div className="max-w-6xl mx-auto flex items-center py-10">
+      <div id="home" className="max-w-6xl mx-auto flex items-center py-10">
         <div className="w-2/3">
           <h1 className="text-4xl font-semibold mb-4">Hi I am Harshita, Developer!</h1>
           <p className="text-lg text-gray-700 mb-8 text-justify">
             Hii I'm Harshita, a software developer specializing in web development arena. Comfortable with NodeJS and React Js and Python-Django and Java. Currently Learning App development using Flutter. Also have slight interest in Space technologies. Always looking forward to explore more in the field of coding. I'm a passionate developer and designer, dedicated to creating amazing web experiences.
           </p>
           <a
-            href="#"
+            href="#contact"
             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
           >
             Connect with me!
@@ -126,7 +126,7 @@ const Home = () => {
       </div>
 
       {/* Projects */}
-      <div className="max-w-6xl mx-auto mt-16">
+      <div id="projects" className="max-w-6xl mx-auto mt-16">
         <h2 className="text-2xl font-semibold mb-8">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -163,7 +163,7 @@ const Home = () => {
       </div>
 
       {/* Skills */}
-      <div className="max-w-6xl mx-auto">
+      <div id="skills" className="max-w-6xl mx-auto">
         <h2 className="text-2xl font-semibold mb-8 py-10">Skills</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {skills.map((skill, index) => (
@@ -181,7 +181,7 @@ const Home = () => {
       </div>
 
       {/* Contact */}
-      <div className="max-w-6xl mx-auto mt-16">
+      <div id="contact" className="max-w-6xl mx-auto mt-16">
         <h2 className="text-2xl font-semibold mb-8">Contact Me</h2>
         <form onSubmit={handleSubmit}>
           {/* Name */}
@@ -232,12 +232,17 @@ const Home = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
+            className="bg-blue-500 hover:bg-blue-600 mb-3 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
           >
             Submit
           </button>
         </form>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-4 text-center">
+        <p>&copy; 2023 Harshita Chhangani. All rights reserved.</p>
+      </footer>
     </section>
   );
 };
