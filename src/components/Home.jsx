@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import profilePicture from '../assets/imgs/ProfilePic.png';
 import space from '../assets/imgs/space.png';
 import hackmatchr from '../assets/imgs/hackmatchr.png';
@@ -6,7 +6,7 @@ import movies_app from '../assets/imgs/movies_app.png';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
-import Skills from './Skills'; 
+import Skills from './Skills';
 
 import Typewriter from "typewriter-effect";
 
@@ -76,7 +76,7 @@ const projects = [
 ];
 
 const Home = () => {
-  
+
 
   const [formData, setFormData] = useState({
     name: '',
@@ -138,69 +138,69 @@ const Home = () => {
       <div id="home" className="max-w-6xl mx-auto flex items-center py-10">
         <div className="w-2/3">
           <div className="text-4xl font-semibold mb-4">
-      Hi, I am Harshita, <Typewriter
- 
- onInit={(typewriter) => {
-     typewriter
-         .typeString("Developer !")
-         .pauseFor(1000)
-         .deleteAll()
-         .typeString("Freelancer !")
-         .pauseFor(1000)
-         .deleteAll()
-         .typeString("Web Enthusiast !")
-         .start();
- }}
-/>
-    </div>
+            Hi, I am Harshita, <Typewriter
+
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Developer !")
+                  .pauseFor(1000)
+                  .deleteAll()
+                  .typeString("Freelancer !")
+                  .pauseFor(1000)
+                  .deleteAll()
+                  .typeString("Web Enthusiast !")
+                  .start();
+              }}
+            />
+          </div>
           <p className="text-lg text-gray-700 mb-8 text-justify">
             Hii I'm Harshita, a software developer specializing in web development arena. Comfortable with NodeJS and React Js and Python-Django and Java. Currently Learning App development using Flutter. Also have slight interest in Space technologies. Always looking forward to explore more in the field of coding. I'm a passionate developer and designer, dedicated to creating amazing web experiences.
           </p>
           <div className="flex space-x-4">
-  <a
-    href="#contact"  // Replace with the appropriate link
-    className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
-  >
-    Connect with me
-  </a>
-  <a
-    href="https://drive.google.com/file/d/1Bfc3nb5MYmx3GBYfvDXV6hUUhoAh9rOC/view?usp=sharing"  // Replace with the actual URL of your resume
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
-  >
-    View Resume
-  </a>
-  <div className="flex space-x-4">
-    <a
-      href="https://github.com/harshitachhangani"  // Replace with your GitHub profile URL
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-gray-600 hover:text-gray-800"
-    >
-      <FaGithub className="inline-block text-3xl align-middle" />
-    </a>
-    <a
-      href="https://www.linkedin.com/in/harshita-chhangani-a82732257/"  // Replace with your LinkedIn profile URL
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-blue-600 hover:text-blue-800"
-    >
-      <FaLinkedin className="inline-block text-3xl align-middle" />
-    </a>
-    <a
-      href="https://www.instagram.com/your-instagram-username"  // Replace with your Instagram profile URL
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-pink-600 hover:text-pink-800"
-    >
-      <FaInstagram className="inline-block text-3xl align-middle" />
-    </a>
-  </div>
-</div>
+            <a
+              href="#contact"  // Replace with the appropriate link
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
+            >
+              Connect with me
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1Bfc3nb5MYmx3GBYfvDXV6hUUhoAh9rOC/view?usp=sharing"  // Replace with the actual URL of your resume
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
+            >
+              View Resume
+            </a>
+            <div className="flex space-x-4">
+              <a
+                href="https://github.com/harshitachhangani"  // Replace with your GitHub profile URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-800"
+              >
+                <FaGithub className="inline-block text-3xl align-middle" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/harshita-chhangani-a82732257/"  // Replace with your LinkedIn profile URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800"
+              >
+                <FaLinkedin className="inline-block text-3xl align-middle" />
+              </a>
+              <a
+                href="https://www.instagram.com/your-instagram-username"  // Replace with your Instagram profile URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-600 hover:text-pink-800"
+              >
+                <FaInstagram className="inline-block text-3xl align-middle" />
+              </a>
+            </div>
+          </div>
 
         </div>
-        
+
         <div className="w-1/2 text-center">
           <div className="mx-auto mb-4">
             <img
@@ -269,20 +269,21 @@ const Home = () => {
       </div>
 
       {/* education */}
-
+      {/* Education */}
       <div id="education" className="max-w-6xl mx-auto mt-16">
         <h2 className="text-3xl font-semibold mb-8 text-center">Education</h2>
-        <ul>
+        <ul className="list-none p-0">
           {education.map((edu, index) => (
-            <li key={index} className="mb-4">
-              <p className="text-xl font-semibold">{edu.school}</p>
-              <p>{edu.degree} in {edu.major}</p>
-              <p>Year: {edu.graduationYear}</p>
-              <p>CGPA / Percentage: {edu.percentage}</p>
+            <li key={index} className="mb-8 border-b border-gray-300 pb-4">
+              <p className="text-2xl font-semibold text-blue-600 mb-2">{edu.school}</p>
+              <p className="text-lg font-semibold">{edu.degree} in {edu.major}</p>
+              <p className="text-gray-600">Year: {edu.graduationYear}</p>
+              <p className="text-gray-600">CGPA / Percentage: {edu.percentage}</p>
             </li>
           ))}
         </ul>
       </div>
+
 
 
 
