@@ -1,357 +1,74 @@
-import React, { useState, useEffect } from 'react';
-import profilePicture from '../assets/imgs/ProfilePic.png';
-import space from '../assets/imgs/space.png';
-import hackmatchr from '../assets/imgs/hackmatchr.png';
-import movies_app from '../assets/imgs/movies_app.png';
-import { FaSun, FaMoon } from 'react-icons/fa';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import React from 'react'
 
-import Skills from './Skills';
-
-import Typewriter from "typewriter-effect";
-
-const education = [
-  {
-    school: 'Bachelor of Technology',
-    degree: 'Btech in Computer Science',
-    major: 'Vishwakarma Institute of Technology',
-    graduationYear: '2022-2025',
-    percentage: '8.0',
-  },
-  {
-    school: 'Diploma in Engineering',
-    degree: 'Diploma in Computer Science',
-    major: 'Government Polytechnic Amravati',
-    graduationYear: '2019-2022',
-    percentage: '94.7 %',
-  },
-  {
-    school: 'Secondary School',
-    degree: 'SSC Board',
-    major: 'Bhawarilal Samra English High School',
-    graduationYear: '2013-2019',
-    percentage: '93.2%',
-  },
-  // Add more education entries as needed
-];
-
-
-
-const skills = [
-  { name: 'React.js', level: 90 },
-  { name: 'Tailwind CSS', level: 80 },
-  { name: 'Bootstrap', level: 75 },
-  { name: 'Node.js', level: 85 },
-  { name: 'Python', level: 80 },
-  { name: 'Java', level: 65 },
-  { name: 'Python-Django', level: 55 },
-  { name: 'Javascript', level: 90 },
-  { name: 'C++', level: 70 },
-  { name: 'C', level: 70 },
-];
-
-const projects = [
-  {
-    title: 'Space Biology Website',
-    description: 'Created a Space Biology Superhero Website which contains all information of space related fields and researches. It is a responsive website with all the required pages linked with it. Created using Javascript.',
-    demoLink: 'https://harshitachhangani.github.io/spacebiologysuperhero.github.io/',
-    sourceLink: 'https://github.com/harshitachhangani/spacebiologysuperhero.github.io',
-    screenshot: space,
-  },
-  {
-    title: 'Hackmatchr',
-    description: 'HackMatchr is a platform designed to connect talented coders and tech enthusiasts from all around the world. Whether you are a student, a professional, or just a passionate coder, HackMatchr provides the perfect environment to find like-minded individuals and form teams for hackathons, projects, and collaborative learning. It is an MERN stack website.',
-    demoLink: 'https://project2-demo.com',
-    sourceLink: 'https://github.com/harshitachhangani/hack_matchr',
-    screenshot: hackmatchr,
-  },
-  {
-    title: 'Movies App',
-    description: 'The Movies App is a web application built using JavaScript that allows users to browse and discover information about movies. The app provides an intuitive and user-friendly and responsive interface to search for movies, view their details, and explore related information.',
-    demoLink: 'https://movies-guide-app.netlify.app/',
-    sourceLink: 'https://github.com/harshitachhangani/MoviesApp',
-    screenshot: movies_app,
-  },
-  // Add more projects as needed
-];
+import pic from "../assets/imgs/ProfilePic.png";
+import { FaGithub, FaYoutube, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+import { Link } from 'react-scroll';
+// import {fadeIn} from "../variants";
 
 const Home = () => {
-
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, e.g., send data to a backend server
-    console.log(formData);
-    // Clear form fields
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
-  };
-
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    // You can implement the actual dark/light mode switching logic here
-  };
-
   return (
-    <section className={`bg-gray-100 ${isDarkMode ? 'dark' : ''}`}>
+    <section className='min-h-[85vh] mt-32 lg:min-h-[78vh] flex items-center justify-center' id='home'>
+        <div className='flex flex-col-reverse lg:flex-row lg:items-center md:justify-center lg:gap-x-12 '>
+          {/* Left Section */}
+          <div className='flex max-w-screen-md mx-auto flex-col flex-1 md:items-start md:justify-start text-center lg:text-left  md:w-3/4 '>
+            <h1 className=' text-[30px] font-bold font-main leading-[1.2] lg:text-[40px]'>
+              Harshita <span>Chhangani </span>
+            </h1>
+            <div className='mb-6 text-[30px] lg:text-[55px] font-bold uppercase leading-[-1]'>
+              <span className='mr-4'>I am a</span>
+              <TypeAnimation sequence={[
+                'Developer !',
+                2000,
+                'Freelancer !',
+                2000,
+                'Designer !',
+                2000,
+              ]}
+                speed={50}  
+                className='font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-blue-600'   
+                wrapper='span'   
+                repeat={Infinity}   
 
-      {/* Navbar */}
-      <nav className={`p-5 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-dark'} drop-shadow-xl sticky top-0`}>
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="font-semibold text-xl">Harshita Chhangani</div>
-          <ul className="flex space-x-4">
-            <li><a href="#home" className="font-semibold text-xl hover:text-blue-300">Home</a></li>
-            <li><a href="#projects" className="font-semibold text-xl hover:text-blue-300">Projects</a></li>
-            <li><a href="#skills" className="font-semibold text-xl hover:text-blue-300">Skills</a></li>
-            <li><a href="#education" className="font-semibold text-xl hover:text-blue-300">Education</a></li>
-            <li><a href="#contact" className="font-semibold text-xl hover:text-blue-300">Contact</a></li>
-          </ul>
-          <button
-            className="text-xl"
-            onClick={toggleDarkMode}
-          >
-            {isDarkMode ? <FaSun className="text-yellow-500" /> : <FaMoon className="text-blue-500" />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Intro */}
-      <div id="home" className="max-w-6xl mx-auto flex items-center py-10">
-        <div className="w-2/3">
-          <div className="text-4xl font-semibold mb-4">
-            Hi, I am Harshita, <Typewriter
-
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("Developer !")
-                  .pauseFor(1000)
-                  .deleteAll()
-                  .typeString("Freelancer !")
-                  .pauseFor(1000)
-                  .deleteAll()
-                  .typeString("Web Enthusiast !")
-                  .start();
-              }}
-            />
-          </div>
-          <p className="text-lg text-gray-700 mb-8 text-justify">
-            Hii I'm Harshita, a software developer specializing in web development arena. Comfortable with NodeJS and React Js and Python-Django and Java. Currently Learning App development using Flutter. Also have slight interest in Space technologies. Always looking forward to explore more in the field of coding. I'm a passionate developer and designer, dedicated to creating amazing web experiences.
-          </p>
-          <div className="flex space-x-4">
-            <a
-              href="#contact"  // Replace with the appropriate link
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
-            >
-              Connect with me
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1Bfc3nb5MYmx3GBYfvDXV6hUUhoAh9rOC/view?usp=sharing"  // Replace with the actual URL of your resume
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
-            >
-              View Resume
-            </a>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/harshitachhangani"  // Replace with your GitHub profile URL
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-800"
-              >
-                <FaGithub className="inline-block text-3xl align-middle" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/harshita-chhangani-a82732257/"  // Replace with your LinkedIn profile URL
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-800"
-              >
-                <FaLinkedin className="inline-block text-3xl align-middle" />
-              </a>
-              <a
-                href="https://www.instagram.com/your-instagram-username"  // Replace with your Instagram profile URL
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-pink-600 hover:text-pink-800"
-              >
-                <FaInstagram className="inline-block text-3xl align-middle" />
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="w-1/2 text-center">
-          <div className="mx-auto mb-4">
-            <img
-              src={profilePicture}
-              alt="Your Name"
-              className="w-48 h-48 rounded-full object-cover"
-              style={{ marginLeft: '15rem' }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Projects */}
-      <div id="projects" className="max-w-6xl mx-auto mt-16">
-        <h2 className="text-2xl font-semibold mb-8">My Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-6 flex flex-col h-full">
-              <img
-                src={project.screenshot}
-                alt={project.title}
-                className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-600 mb-4">{project.description}</p>
-              <div className="flex-grow"></div>
-              <div className="flex justify-between">
-                <a
-                  href={project.demoLink}
-                  className="text-blue-500 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Demo
-                </a>
-                <a
-                  href={project.sourceLink}
-                  className="text-blue-500 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Source
-                </a>
-              </div>
+
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Skills */}
-      <div id="skills" className="max-w-6xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-8 py-10">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {skills.map((skill, index) => (
-            <div key={index} className="mb-4">
-              <p className="text-lg font-semibold">{skill.name}</p>
-              <div className="bg-gray-300 h-5 rounded-full">
-                <div
-                  className="bg-blue-600 text-white h-5 rounded-full"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
-              </div>
+            <p className=' px-4 md:text-start  lg:px-0 mx-auto text-justify'>Hii I'm Harshita, a software developer specializing in web development arena. Comfortable with NodeJS and React Js and Python-Django and Java. Currently Learning App development using Flutter. Also have slight interest in Space technologies. Always looking forward to explore more in the field of coding.</p>
+            <div className='flex items-center justify-center w-full md:justify-start gap-4 mt-4 '>
+              <Link
+                to="/Team" // Replace "/login" with the actual path to your login page
+                className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white px-8 py-3 p-2 rounded-lg font-semibold transition-colors duration-300 no-underline " style={{ textDecoration: 'none', cursor: 'pointer' }}
+              >
+                Connect Me
+              </Link>
+              <a href="#" className='text-gradient text-bold no-underline '>View Resume</a>
             </div>
-          ))}
+
+            <div className='flex items-center justify-center w-full md:justify-start gap-4 mt-4 '>
+  <a href="">
+    <FaGithub className='text-black text-2xl hover:text-gray-600' />
+  </a>
+  <a href="">
+    <FaLinkedin className='text-blue-600 text-2xl hover:text-blue-800' />
+  </a>
+  <a href="">
+    <FaInstagram className='text-pink-500 text-2xl hover:text-pink-700' />
+  </a>
+</div>
+          </div>
+          {/* Right */}
+          <div className='flex items-center justify-center py-8'>
+            <img className='rounded-full w-64 h-64 object-cover' src={pic} alt="My Image" />
+          </div>
         </div>
-      </div>
 
-      {/* education */}
-      {/* Education */}
-      <div id="education" className="max-w-6xl mx-auto mt-16">
-        <h2 className="text-3xl font-semibold mb-8 text-center">Education</h2>
-        <ul className="list-none p-0">
-          {education.map((edu, index) => (
-            <li key={index} className="mb-8 border-b border-gray-300 pb-4">
-              <p className="text-2xl font-semibold text-blue-600 mb-2">{edu.school}</p>
-              <p className="text-lg font-semibold">{edu.degree} in {edu.major}</p>
-              <p className="text-gray-600">Year: {edu.graduationYear}</p>
-              <p className="text-gray-600">CGPA / Percentage: {edu.percentage}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-
-
-
-      {/* Contact */}
-      <div id="contact" className="max-w-6xl mx-auto mt-16">
-        <h2 className="text-2xl font-semibold mb-8">Contact Me</h2>
-        <form onSubmit={handleSubmit}>
-          {/* Name */}
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-lg font-semibold mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              className="w-full px-4 py-2 border rounded-lg"
-            />
-          </div>
-          {/* Email */}
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-lg font-semibold mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your Email"
-              className="w-full px-4 py-2 border rounded-lg"
-            />
-          </div>
-          {/* Message */}
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-lg font-semibold mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Your Message"
-              rows="4"
-              className="w-full px-4 py-2 border rounded-lg"
-            ></textarea>
-          </div>
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-600 mb-3 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-4 text-center">
-        <p>&copy; 2023 Harshita Chhangani. All rights reserved.</p>
-      </footer>
     </section>
-  );
-};
 
-export default Home;
+
+
+
+  )
+}
+
+export default Home

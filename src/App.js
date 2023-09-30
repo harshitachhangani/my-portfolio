@@ -1,10 +1,22 @@
+import Contact from "./components/Contact";
+import Education from "./components/Education";
+import Footer from "./components/Footer";
 import Home from "./components/Home";
-import NavBar from "./components/NavBar";
+import Navbar from "./components/Navbar";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+
 function App() {
   return (
-  <div>
+    <>
+    <Navbar/>
     <Home />
-  </div>
+    <Projects />
+    <Skills />
+    <Education />
+    <Contact />
+    <Footer />
+    </>
   
   );
 }
