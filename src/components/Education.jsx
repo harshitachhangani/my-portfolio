@@ -27,7 +27,7 @@ const educationData = [
 
 function Education() {
   return (
-    <section className="py-10">
+    <section className="py-10" id='education'>
       <div className="container mx-auto">
       <h2 className="text-2xl md:text-4xl font-extrabold text-center text-blue-500 mb-6">Education</h2>
       
