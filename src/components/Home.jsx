@@ -37,7 +37,7 @@ const Home = () => {
             <p className=' md:text-start  lg:px-0 px-8 mx-auto text-justify'>Hii I'm Harshita, a software developer specializing in web development arena. Comfortable with NodeJS and React Js and Python-Django and Java. Currently Learning App development using Flutter. Also have slight interest in Space technologies. Always looking forward to explore more in the field of coding.</p>
             <div className='flex items-center justify-center w-full md:justify-start gap-4 mt-4 '>
               <Link
-                to="/Team" // Replace "/login" with the actual path to your login page
+                to="contact" 
                 className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white px-8 py-3 p-2 rounded-lg font-semibold transition-colors duration-300 no-underline " style={{ textDecoration: 'none', cursor: 'pointer' }}
               >
                 Connect Me
