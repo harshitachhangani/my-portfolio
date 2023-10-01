@@ -59,9 +59,9 @@ function Projects() {
                 <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-75 text-white text-center p-4">
                   <h2 className="text-xl font-bold mb-2">{card.title}</h2>
                   <p className="text-sm text-justify">{card.description}</p>
-                  <div className="flex mt-4">
-                    <a href={card.demoLink} className="text-gradient text-bold no-underline mr-4">View Demo</a>
-                    <a href={card.sourceLink} className="text-gradient text-bold no-underline">View Source</a>
+                  <div className="flex font-bold ">
+                    <a href={card.demoLink} className="text-gradient hover:text-white  no-underline mr-4">View Demo</a>
+                    <a href={card.sourceLink} className="text-gradient hover:text-white no-underline">View Source</a>
                   </div>
                 </div>
               )}

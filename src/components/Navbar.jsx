@@ -42,7 +42,7 @@ function Navbar() {
   return (
     <header className={`w-full bg-white md:bg-transparent fixed top-0 left-0 right-0 z-50 ${isDarkMode ? 'dark-mode' : ''}`}>
       <nav
-        className={`py-2 lg:px-14 px-4 ${
+        className={` lg:px-14 px-4 ${
           isSticky
             ? "sticky top-0 left-0 right-0 border-b bg-white duration-300 "
             : ""
@@ -59,7 +59,7 @@ function Navbar() {
                 to={path}
                 
                 key={path}
-                className='block text-base text-gray-900 hover:text-blue-500 first-font-medium no-underline'
+                className='block text-base font-bold  text-gray-900 hover:text-blue-500 first-font-medium no-underline'
                 style={{ textDecoration: 'none', cursor: 'pointer' }}
               >
                 {link}
@@ -97,7 +97,7 @@ function Navbar() {
               to={path}
              
               key={path}
-              className='block text-base text-gray-100 hover:text-blue-500 first-font-medium no-underline md:hidden'
+              className='block text-base font-bold text-gray-100 hover:text-blue-500 first-font-medium no-underline md:hidden'
               style={{ textDecoration: 'none', cursor: 'pointer' }}
             >
               {link}

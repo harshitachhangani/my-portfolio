@@ -3,9 +3,11 @@ import React from 'react';
 const Contact = () => {
   return (
     <div className="flex items-center justify-center min-h-screen  py-12 px-4 sm:px-6 lg:px-8" id='contact'>
+      
       <div className="w-full max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="bg-gray-800 text-white py-4 px-6">
-          <h2 className="text-3xl text-center font-bold">Contact Me</h2>
+        
+        <div className="bg-gray-800 text-white py-2 lg:py-4 px-6">
+          <h2 className="text-2xl lg:text-3xl text-center font-bold">Contact Me</h2>
         </div>
         <form className="px-8 py-6">
           <div className="mb-4">
@@ -43,7 +45,7 @@ const Contact = () => {
           </div>
           <div className="flex items-center justify-center">
             <button
-              className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white px-3 py-2 lg:px-8 lg:py-3 rounded-lg font-semibold transition-colors duration-300"
               type="submit"
             >
               Send Message
